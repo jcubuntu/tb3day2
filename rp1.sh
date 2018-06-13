@@ -90,15 +90,16 @@ cd $HOME/catkin_ws/src
 git clone https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
 git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 git clone https://github.com/ROBOTIS-GIT/turtlebot3.git
-git clone https://github.com/ROBOTIS-GIT/turtlebot3_autorace.git
-git clone https://github.com/UbiquityRobotics/raspicam_node.git
-sudo apt-get install -y ros-kinetic-compressed-image-transport ros-kinetic-camera-info-manager
-
 cd $HOME/catkin_ws/src/turtlebot3
 sudo rm -r turtlebot3_description/ turtlebot3_teleop/ turtlebot3_navigation/ turtlebot3_slam/ turtlebot3_example/
+cd $HOME/catkin_ws && catkin_make
+
+sudo apt-get install -y ros-kinetic-compressed-image-transport ros-kinetic-camera-info-manager
+
+
 sudo apt-get install -y ros-kinetic-rosserial-python ros-kinetic-tf
 sudo apt-get install -y ros-kinetic-image-transport ros-kinetic-cv-bridge ros-kinetic-vision-opencv python-opencv libopencv-dev ros-kinetic-image-proc
-cd $HOME/catkin_ws && catkin_make
+
 
 echo "[Complete!!!]"
 exit 0
